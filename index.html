@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+</head>
+<body>
+    <h1>To do</h1
+        >
+        <div class="cont">
+            <input  id="field" type="text">
+            <button id="ad">ADD</button>
+            
+           
+        </div>
+        <div id="todocontainer">
+
+        </div>
+</body>
+<style>
+    #todocontainer{
+        cursor: pointer;
+    }
+</style>
+<script >
+    var field = document.getElementById('field');
+    var ad =  document.getElementById('ad');
+    var text =  document.getElementById('todocontainer');
+
+
+      
+    ad.addEventListener('click',function()
+    {
+        var para = document.createElement('p');
+        para.classList.add('paragraph-syling');
+         para.innerText = field.value;
+         field.value = "";
+        text.appendChild(para);
+        para.addEventListener('click' , function(){
+            para.style.textDecoration ="line-through";
+        })
+        para.addEventListener('dblclick' , function(){
+            text.removeChild(para);        })
+
+    });
+   
+    
+
+    
+  
+
+
+    
+</script>
+</html>
